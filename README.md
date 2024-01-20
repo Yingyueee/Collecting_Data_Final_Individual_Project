@@ -1,78 +1,52 @@
 # Collecting_Data_Final_Individual_Project
 # Analysis of the Top 5 Popular Science Fiction Books on Project Gutenberg
+This project conducts a comprehensive analysis of five of the most popular science fiction books available on Project Gutenberg. Using natural language processing (NLP) tools provided by spaCy and a range of visualization techniques, we explore the linguistic and thematic elements that have cemented these novels as classics in the science fiction genre.
 
 ### Corpus Description
-This corpus contains two datasets: the first includes data collected about the top 100 songs from each week of 2021 on the Spotify charts, while the second includes data collected about the top 100 songs from each week of 2021 on the Billboard Hot 100 charts.
+The corpus consists of the following five seminal science fiction works:
 
-Both sets concern data collected only from the United States.
+1. "Frankenstein" by Mary Shelley
+2. "The Strange Case of Dr. Jekyll and Mr. Hyde" by Robert Louis Stevenson
+3. "The Time Machine" by H.G. Wells
+4. "The War of the Worlds" by H.G. Wells
+5. "Twenty Thousand Leagues under the Sea" by Jules Verne
 
 ### File Format and Content
-- `.pdf` Portable document format; includes the Data Management Plan for this project
-- `.csv` Comma-separated values; includes (meta)data on the songs for both the Billboard top 100 and the Spotify Top 200 charts.
-- `.ipynb` Jupyter Notebook; the notebook in this repository consists of three parts:
+- `.txt`: Raw text files containing the full text of each novel.
+- `.csv`: Comma-separated values files created during the analysis, containing metadata, NER results, sentiment scores, etc.
+- `.ipynb`: Jupyter Notebook files detailing the analysis process, including code, visualizations, and interpretative text.
+ the notebook in this repository consists of three parts:
     - Part 1: Introduction
+This section walks users through setting up their environment, including installing necessary Python packages, downloading the spaCy language model, and loading the texts into the analysis environment.
     - Part 2: Tutorial
+We use spaCy to enrich the text data through tokenization, part-of-speech tagging, and named entity recognition. This process allows us to extract meaningful patterns and insights from the raw text.
     - Part 3: Visualization
+A variety of visualizations are presented, including word clouds, frequency histograms, and entity relationship graphs. These visualizations aim to make the data analysis more accessible and provide clear insights into the thematic and stylistic characteristics of the corpus.
    
 ### Target Audience
-The target audiences for this corpus are record labels or even musical artists to identify popular trends in music in order to cater musical releases for maximum success - it can also be used in this way for advertisers or marketers. This corpus could also be used by data scientists or academics who study the arts and who might have research questions, hypotheses, or studies concerning musical trends, popularity, and audience or consumer interaction with music and genres.
+This project is intended for literary scholars, data scientists interested in NLP, and enthusiasts of classic science fiction literature.
 
 ### Intended Use
-The intended usage of this corpus is to inform interested researchers, scholars, marketers, and companies. It can be used for academic purposes such as research study papers, journals, and articles, or for commercial/business purposes as it can inform companies and marketing/advertising teams about useful trends and consumer behavior(s).
-
-The tutorial and active learning exercises in this repository are useful for people who are interested in learning about data collection and doing data analysis in Python. 
+The analyses and visualizations provided here are intended for educational purposes, literary analysis, and further research into the field of digital humanities.
 
 ### Text Selection Criteria
-The songs in the corpus were included based on their popularity rankings per month - if they were one of the top 100 most popular songs of that month, they were included. This “popularity” is defined differently by both Spotify and the Billboard Hot 100. Spotify formulates its charts through mainly algorithms that consider mostly streaming but also shares, number of listeners, including new ones, and even rates of saving songs to playlists or skipping. The Billboard Hot 100 charts are informed by several factors, including sales (physical and digital), radio airplay, digital downloads, and online streaming. Both datasets contain the necessary identifying or crucial information about the songs such as the title, the artist, and its ranking, as well as the number of weeks on the board or chart (a big indicator of overall popularity), its ranking the previous week, and its peak rank. "Date" was included to be a linking column between both datasets.
-
-While there was extra data about Spotify’s top songs, only the top 100 were included to allow for a fair comparison to the Billboard Hot 100.
-
+The texts were selected based on their popularity, historical significance in the science fiction genre, and their availability as public domain works on Project Gutenberg.
 
 ### Data Collection Process
-The Billboard Hot 100 data was collected from Kaggle - a website and online community where users can share and download datasets. The owner of the dataset is [Dhruvil Dave](https://www.kaggle.com/dhruvildave). He is a graduate student from the University of Texas at Dallas. He shared this Billboard Chart dataset which includes ‘The Hot 100’ chart of songs according to Billboard’s ranking system. This dataset includes a collection of all the weekly Billboard Hot 100 charts between 04-08-1958 and 06-11-2021. Dave published the dataset on Kaggle under the license: `CC BY-NC-SA 4.0.` 
-
-For our project’s purpose, we cleaned the data to only include the charts in 2021.
-
-In order to collect Spotify data, web scraping from the Spotify charts website needed to be done. This website archives weekly charts from various countries. As these charts are weekly instead of monthly and include the top 200 rather than the top 100, in order to create a comprehensive dataset comparable to the Billboard Hot 100 charts, it was necessary to include the top 200 weekly charts spanning all 52 weeks of 2021. In our later cleaning and preprocessing steps, we would exclude other countries and extract the top 100 songs for a fair comparison to the Billboard charts.
-
+Texts were downloaded directly from Project Gutenberg using automated scripts that adhere to the site's robot.txt file and usage policies.
 
 ### Cleaning and Preprocessing
-Upon collection of the data, Python was used, particularly Jupyter Notebooks, for preprocessing. This process involved cleaning the data, organizing it efficiently, and preparing it for in-depth analysis and visualization. 
+Text data underwent several cleaning and preprocessing steps to ensure quality analysis:
 
-For Spotify, this included defining the columns needed from the collected data (rank, uri, artist_names, track_name, peak_rank, previous_rank, weeks_on_chart, streams, date, country, source). The next step was to combine multiple .csv files, add new columns, and extract the top 100 songs. Next was to specify the directory containing .csv files and set the country to the United States.
+- **Metadata Removal**: Extraneous headers and footers provided by Project Gutenberg were removed.
+- **Tokenization**: Texts were broken down into sentences and words for further analysis.
+- **Normalization**: Words were standardized to lower case to ensure consistency in frequency analysis.
+- **Stopword Removal**: Common English stopwords were removed to focus on the more meaningful content.
+- **Lemmatization**: Words were reduced to their base or dictionary form.
 
-In order to clean and preprocess the Billboard Hot 100 data from the dataset found on Kaggle, the columns first had to be renamed in both datasets: ‘artist_names’ for ‘artist’, ‘track_name’ for ‘song’, and ‘weeks_on_chart’ for ‘weeks_on_charts’ in Spotify; ‘peak-rank’ for ‘peak_rank’ and ‘weeks-on-board’ for ‘weeks_on_charts’ for Billboard). Next was to drop columns that would not be needed: ‘uri’, ‘country’, ‘source’ (as the U.S. was previously specified in the prior preprocessing step), and  ‘previous_rank’ for Spotify, and ‘last-week’ for Billboard. Next was to change the order of the columns for uniformity between datasets as follows: song, artist, date, rank, weeks_on_charts, peak_rank, and, for Spotify only, streams.
+After preprocessing, the text data was enriched with NLP techniques to facilitate the subsequent analysis.
 
-
-**Columns Used in Spotify CSV:**
-
-| Variable      | Description                                  |
-| ------------- | -------------------------------------------- |
-| rank  | Where the song falls in the numbered rankings    |
-| uri    | Identifying string of characters for the song    |
-| artist_names | The performing artist of the song                 |
-| track_name      | The tile of the song |
-| peak_rank    | The highest position on the charts the song has taken  |
-| previous_rank  | The previous position on the charts the song has taken    |
-| weeks_on_chart  | Number of weeks that the song has remained on the charts  |
-| streams  | How many digital streams the song has  |
-| date          | The date of the chart |
-| country     | The country that the song has reached chart status in         |
-| source  | The record label or company within which the song has been released  |
-
-
-**Columns Used in Billboard CSV:**
-
-| Variable      | Description                                  |
-| ------------- | -------------------------------------------- |
-| date          | The date of the chart |
-| rank  | Where the song falls in the numbered rankings    |
-| song     | The tile of the song |
-| artist | The performing artist of the song                 |
-| last-week  | The ranking of the song in the previous week   |
-| peak-rank    | The highest position on the charts the song has taken  |
-| weeks-on-board  | Number of weeks that the song has remained on the Billboard charts  |
-
+For detailed instructions, analyses, and findings, refer to the Jupyter Notebooks included in this project.
 
 **Contributors** 
 - Yingyue Jiang
