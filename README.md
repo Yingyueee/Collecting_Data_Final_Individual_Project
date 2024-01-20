@@ -1,6 +1,5 @@
-# Collecting_Data_A4
-# Music Popularity Across Platforms: United States' Spotify Charts vs. Billboard Hot 100
-## Collecting Data - Group D
+# Collecting_Data_Final_Individual_Project
+# Analysis of the Top 5 Popular Science Fiction Books on Project Gutenberg
 
 ### Corpus Description
 This corpus contains two datasets: the first includes data collected about the top 100 songs from each week of 2021 on the Spotify charts, while the second includes data collected about the top 100 songs from each week of 2021 on the Billboard Hot 100 charts.
@@ -13,7 +12,7 @@ Both sets concern data collected only from the United States.
 - `.ipynb` Jupyter Notebook; the notebook in this repository consists of three parts:
     - Part 1: Introduction
     - Part 2: Tutorial
-    - Part 3: Active Learning Exercises
+    - Part 3: Visualization
    
 ### Target Audience
 The target audiences for this corpus are record labels or even musical artists to identify popular trends in music in order to cater musical releases for maximum success - it can also be used in this way for advertisers or marketers. This corpus could also be used by data scientists or academics who study the arts and who might have research questions, hypotheses, or studies concerning musical trends, popularity, and audience or consumer interaction with music and genres.
