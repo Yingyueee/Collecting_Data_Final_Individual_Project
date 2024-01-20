@@ -16,12 +16,11 @@ The corpus consists of the following five seminal science fiction works:
 - `.csv`: Comma-separated values files created during the analysis, containing metadata, NER results, sentiment scores, etc.
 - `.ipynb`: Jupyter Notebook files detailing the analysis process, including code, visualizations, and interpretative text.
  the notebook in this repository consists of three parts:
-    - Part 1: Introduction
-This section walks users through setting up their environment, including installing necessary Python packages, downloading the spaCy language model, and loading the texts into the analysis environment.
-    - Part 2: Tutorial
-We use spaCy to enrich the text data through tokenization, part-of-speech tagging, and named entity recognition. This process allows us to extract meaningful patterns and insights from the raw text.
-    - Part 3: Visualization
-A variety of visualizations are presented, including word clouds, frequency histograms, and entity relationship graphs. These visualizations aim to make the data analysis more accessible and provide clear insights into the thematic and stylistic characteristics of the corpus.
+    - Part 1: Getting Started: This section walks users through setting up their environment, including installing necessary Python packages, downloading the spaCy language model, and loading the texts into the analysis environment.
+
+    - Part 2: Text Enrichment with SpaCy: We use spaCy to enrich the text data through tokenization, part-of-speech tagging, and named entity recognition. This process allows us to extract meaningful patterns and insights from the raw text.
+
+    - Part 3: Visualization: A variety of visualizations are presented, including word clouds, frequency histograms, and entity relationship graphs. These visualizations aim to make the data analysis more accessible and provide clear insights into the thematic and stylistic characteristics of the corpus.
    
 ### Target Audience
 This project is intended for literary scholars, data scientists interested in NLP, and enthusiasts of classic science fiction literature.
@@ -46,8 +45,7 @@ Text data underwent several cleaning and preprocessing steps to ensure quality a
 
 After preprocessing, the text data was enriched with NLP techniques to facilitate the subsequent analysis.
 
-For detailed instructions, analyses, and findings, refer to the Jupyter Notebooks included in this project.
-
 **Contributors** 
 - Yingyue Jiang
 
+For detailed instructions, analyses, and findings, refer to the Jupyter Notebooks included in this project.
